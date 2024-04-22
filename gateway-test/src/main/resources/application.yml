@@ -1,0 +1,15 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - AddRequestHeader=gateway-env, springcloud-gateway
+      routes:
+        - id: "server_v2"
+          uri: "http://127.0.0.1:8081"
+          predicates:
+            - Path=/test/**

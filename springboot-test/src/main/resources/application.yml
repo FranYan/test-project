@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+    hikari:
+      max-lifetime: 1600000
+      keepalive-time: 90000
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: root
+    password: toor
+
+testdata:
+  datasource:
+    ds1:
+      max-lifetime: 1600000
+      keepalive-time: 90000
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+      username: root
+      password: toor
+      pool-name: testpool-1
+
+    ds2:
+      max-lifetime: 1600000
+      keepalive-time: 90000
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/test2?characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+      username: root
+      password: toor
+      pool-name: testpool-2
+server:
+  port: 8081
